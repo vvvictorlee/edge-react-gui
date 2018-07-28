@@ -55,7 +55,9 @@ matrix:
         licenses:
           - '.+'
       script:
-        - cd android && ./gradlew assembleDebug && ./gradlew assembleRelease
+        - cd android
+        - travis_wait ./gradlew assembleDebug
+        - travis_wait ./gradlew assembleRelease
     - language: objective-c
       os: osx
       osx_image: xcode9.4
@@ -74,4 +76,4 @@ matrix:
       xcode_scheme: ios/edge
       script:
         - cd ios
-        - xcodebuild -derivedDataPath build clean build -scheme edge -configuration release -sdk iphonesimulator11.4 CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" | xcpretty && exit ${PIPESTATUS[0]}
+        - travis_wait xcodebuild -derivedDataPath build clean build -scheme edge -configuration release -sdk iphonesimulator11.4 CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" | xcpretty && exit ${PIPESTATUS[0]}
