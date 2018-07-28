@@ -16,18 +16,28 @@
     "appleDeveloperTeamId": "xxxxxxxxxx",
     "ios": {
       "master": {
-        "hockeyAppId": "xxxxxxxxx"
+        "appCenterAppName": "EdgeWalletIos",
+        "hockeyAppId": "xxxxx"
       },
       "develop": {
-        "hockeyAppId": "xxxxxxxxx"
+        "appCenterAppName": "EdgeWalletIos_Develop",
+        "hockeyAppId": "xxxxx"
+      },
+      "test": {
+        "appCenterAppName": "EdgeWalletIos_Test",
       }
     },
     "android": {
       "master": {
-        "hockeyAppId": "xxxxxxxxx"
+        "appCenterAppName": "EdgeWalletAndroid",
+        "hockeyAppId": "xxxxx"
       },
       "develop": {
-        "hockeyAppId": "xxxxxxxxx"
+        "appCenterAppName": "EdgeWalletAndroid_Develop",
+        "hockeyAppId": "xxxx"
+      },
+      "test": {
+        "appCenterAppName": "EdgeWalletAndroid_Test",
       }
     }
   }

@@ -51,7 +51,7 @@ function main () {
     mylog('Usage: node deploy.js [project] [platform] [branch]')
     mylog('  project options: edge')
     mylog('  platform options: ios, android')
-    mylog('  network options: master, develop')
+    mylog('  network options: master, develop, test')
   }
 
   // let buildObj: BuildObj = {
@@ -121,6 +121,8 @@ function makeCommonPost (buildObj) {
   buildObj.version = packageJson.version
   if (buildObj.repoBranch === 'develop') {
     buildObj.version = packageJson.version + '-d'
+  } else if (buildObj.repoBranch === 'test') {
+    buildObj.version = packageJson.version + '-t'
   } else {
     buildObj.version = packageJson.version
   }
