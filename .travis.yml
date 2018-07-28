@@ -76,4 +76,4 @@ matrix:
       xcode_scheme: ios/edge
       script:
         - cd ios
-        - travis_wait xcodebuild -derivedDataPath build clean build -scheme edge -configuration release -sdk iphonesimulator11.4 CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" | xcpretty && exit ${PIPESTATUS[0]}
+        - travis_wait 30 xcodebuild -derivedDataPath build clean build -scheme edge -configuration release -sdk iphonesimulator11.4 CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" | xcpretty && exit ${PIPESTATUS[0]}
